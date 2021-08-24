@@ -1,11 +1,21 @@
-require("@nomicfoundation/hardhat-toolbox");
+require("@nomiclabs/hardhat-ethers");
+require("@chainlink/contracts/src/v0.8/VRFConsumerBase.sol");
 
-// The next line is part of the sample project, you don't need it in your
-// project. It imports a Hardhat task definition, that can be used for
-// testing the frontend.
-require("./tasks/faucet");
-
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.9",
+  networks: {
+    rinkeby: {
+      url: `https://rinkeby.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
+      accounts: [`0x${process.env.PRIVATE_KEY}`], // Make sure PRIVATE_KEY starts with '0x'
+    },
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
+  },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
+  }
 };
