@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Decentralized Lottery where winners are selected randomly using Chainlink VRF",
   "scripts": {
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.js --network rinkeby"
   },
   "repository": {
     "type": "git",
