@@ -1,6 +1,15 @@
-node_modules
-.idea
-
-#Hardhat files
-cache
-artifacts
+node_modules/
+/cache
+/artifacts
+.vscode/
+.env
+.solcoveragerc
+*.log
+yarn.lock
+package-lock.json
+.DS_Store
+*.swp
+test-snapshots/
+.idea/
+dist/
+build/
