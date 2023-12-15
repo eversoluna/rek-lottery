@@ -1,9 +1,19 @@
 {
   "name": "pek-lottery",
   "version": "1.0.0",
+  "description": "A decentralized lottery smart contract using Solidity, and Chainlink VRF.",
+  "main": "index.js",
   "devDependencies": {
     "@chainlink/contracts": "^1.4.0",
     "@openzeppelin/contracts": "^4.4.0",
-    "hardhat": "^2.13.0"
+    "hardhat": "^2.13.0",
+    "dotenv": "^10.0.0"
+  },
+  "dependencies": {
+    "ethers": "^5.6.0"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.js"
   }
 }
