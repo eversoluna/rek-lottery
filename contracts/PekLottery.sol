@@ -92,22 +92,22 @@ contract PekLottery is Ownable, ReentrancyGuard, VRFConsumerBase {
         return players;
     }
 
-    // Function to change ticket price (only by owner)
+    // Function to change ticket price
     function setTicketPrice(uint256 _ticketPrice) external onlyOwner {
         ticketPrice = _ticketPrice;
     }
 
-    // Function to change house percentage (only by owner)
+    // Function to change house percentage
     function setHousePercentage(uint256 _housePercentage) external onlyOwner {
         housePercentage = _housePercentage;
     }
 
-    // Function to change max winners (only by owner)
+    // Function to change max winners
     function setMaxWinners(uint256 _maxWinners) external onlyOwner {
         maxWinners = _maxWinners;
     }
 
-    // Function to withdraw funds (only by owner)
+    // Function to withdraw funds
     function withdrawFunds() external onlyOwner {
         payable(owner()).transfer(address(this).balance);
     }

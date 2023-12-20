@@ -81,7 +81,7 @@ describe("Lottery Contract", function () {
     await expect(tx).to.emit(lottery, "LotteryEnded");
 
     const players = await lottery.getPlayers();
-    expect(players.length).to.equal(0); // Should reset after the lottery ends
+    expect(players.length).to.equal(0);
   });
 
   it("should send the correct house percentage to the owner", async function () {
@@ -156,7 +156,7 @@ describe("Lottery Contract", function () {
     await lottery.connect(player2).enterLottery({ value: ticketPrice });
 
     // Fast-forward time to allow lottery to end
-    await ethers.provider.send("evm_increaseTime", [86400]); // 1 day
+    await ethers.provider.send("evm_increaseTime", [86400]);
     await ethers.provider.send("evm_mine", []);
 
     await lottery.selectWinners();
