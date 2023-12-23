@@ -10,10 +10,10 @@ async function main() {
     const linkToken = process.env.LINK_TOKEN;
     const fee = process.env.CHAINLINK_FEE;
 
-    const Lottery = await ethers.getContractFactory("Lottery");
-    const lottery = await Lottery.deploy(ticketPrice, housePercentage, maxWinners, vrfCoordinator, linkToken, keyHash, fee);
+    const RekLottery = await ethers.getContractFactory("RekLottery");
+    const rekLottery = await RekLottery.deploy(ticketPrice, housePercentage, maxWinners, vrfCoordinator, linkToken, keyHash, fee);
 
-    console.log("Lottery contract deployed to:", lottery.address);
+    console.log("Rek Lottery contract deployed to:", rekLottery.address);
 }
 
 main()
